@@ -1,0 +1,70 @@
+{
+  "name": "bitcoin-explorer-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run build && electron .",
+    "build": "babel frontend -d lib",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "Ismail Akkila",
+  "license": "ISC",
+  "build": {
+    "appId": "bitcoin-explorer-app-id",
+    "asar": true,
+    "asarUnpack": [
+      "backend/rpc_interface",
+      "backend/main",
+      "backend/mongod"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "electron": "^6.1.7",
+    "electron-builder": "^22.4.1",
+    "electron-rebuild": "^1.10.0",
+    "node-abi": "^2.13.0"
+  },
+  "dependencies": {
+    "base58check": "^2.0.0",
+    "bech32": "^1.1.3",
+    "find-process": "^1.4.3",
+    "is-running": "^2.1.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "winston": "^3.2.1",
+    "zeromq": "^6.0.0-beta.5",
+    "zerorpc": "^0.9.8"
+  }
+}

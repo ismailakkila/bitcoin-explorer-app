@@ -7,16 +7,19 @@ The Bitcoin Explorer app is an electron application with a python backend. The a
 ![Alt text](/Docs/screenshot_config.png?raw=true "Config")
 
 **Blocks:**
+
 You can search with block height or block hash (hex). The app will fetch and display the block information. In the background, the app will fetch supporting information such as transaction input amounts and update the total block fee amount.
 
 ![Alt text](/Docs/screenshot_block.png?raw=true "Block")
 
 **Transactions:**
+
 You can search with transaction hash (hex). The app will fetch the supporting transaction input amounts for the transaction after the initial load.
 
 ![Alt text](/Docs/screenshot_tx.png?raw=true "Transaction")
 
 **Addresses:**
+
 You can search for the following address types:
 * P2PK: Compressed and uncompressed public keys (hex). They start with 02, 03, or 04.
 * P2PKH: Base58 encoded addresses that start with 1.
@@ -33,10 +36,12 @@ Once the data is loaded, the app will fetch supporting information such as trans
 There is a packaged MacOS app available for download [here](https://gofile.io/d/KyXTrl). However, if building the application, you will need the following:
 
 **MongoDB**
+
 The app uses MongoDB as the database backend. You will need to download mongod binary executable for your operating system:
 [MongoDB](https://www.mongodb.com/download-center/community)
 
 **Tor (Optional and Experimental)**
+
 Tor is free and open-source software for enabling anonymous communication. If you would like to connect to your bitcoin node using tor. You will need to have tor installed for your operating system:
 [Tor Project](https://2019.www.torproject.org/docs/tor-doc-osx.html.en)
 
@@ -54,7 +59,9 @@ git clone https://github.com/ismailakkila/bitcoin-explorer-app.git
 ```
 
 **Move supporting binary executables**
+
 MongoDB: You will need to move the required ```mongod```or ```mongod.exe``` file to ```bitcoin-explorer-app/electron/backend```
+
 Tor (Optional): If tor is installed on your operating system, the app will attempt to use it. Otherwise, you will need to move the required ```tor``` or ```tor.exe``` file to ```bitcoin-explorer-app/electron/backend```.
 
 **Install python dependencies and create python executables**
@@ -83,6 +90,7 @@ npm run dist
 The app should be available at ```electron/dist```
 
 **Create .config file (OPTIONAL)**
+
 You can choose to create a custom config file to connect to your own bitcoin node for initial block download and sync. Otherwise, the app will attempt to connect to a random node from the below list:
 
 * seed.bitcoin.sipa.be
@@ -95,7 +103,9 @@ You can choose to create a custom config file to connect to your own bitcoin nod
 You can also change these parameters in the app.
 
 Default Paths to ```.config``` file:
+
 Linux and MacOS: ```~/.bitcoin-explorer-app/.config```
+
 Windows: ```<home_user_directory>/bitcoin-explorer-app/.config```
 
 Examples:
@@ -107,7 +117,7 @@ Examples:
   log=INFO
   ```
 
-  with Tor:
+  With Tor:
   ```
   host=<host_or_ip_address>
   port=8333
@@ -118,7 +128,9 @@ Examples:
 **Database and Log files**
 
 Default Paths:
+
 Linux and MacOS: ```~/.bitcoin-explorer-app/```
+
 Windows: ```<home_user_directory>/bitcoin-explorer-app/```
 
 ## Built With

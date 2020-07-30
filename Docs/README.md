@@ -2,30 +2,26 @@
 
 The Bitcoin Explorer app is an electron application with a python backend. The app connects with a bitcoin node directly or via tor and downloads and indexes the blockchain into a queryable MongoDB database. Within the app, you have the ability to search for blocks, transactions and addresses. The app will spawn individual background processes for syncing, rpc and tor services. The app is more of an experiment to further my knowledge in Bitcoin.
 
-Homescreen
 ![Alt text](/Docs/screenshot_home.png?raw=true "Home")
 
-Config
 ![Alt text](/Docs/screenshot_config.png?raw=true "Config")
 
 **Blocks:**
 You can search with block height or block hash (hex). The app will fetch and display the block information. In the background, the app will fetch supporting information such as transaction input amounts and update the total block fee amount.
 
-Block
 ![Alt text](/Docs/screenshot_block.png?raw=true "Block")
 
 **Transactions:**
 You can search with transaction hash (hex). The app will fetch the supporting transaction input amounts for the transaction after the initial load.
 
-Transaction
 ![Alt text](/Docs/screenshot_tx.png?raw=true "Transaction")
 
 **Addresses:**
 You can search for the following address types:
-P2PK: Compressed and uncompressed public keys (hex). They start with 02, 03, or 04.
-P2PKH: Base58 encoded addresses that start with 1.
-P2SH/ P2SH-P2WPKH/ P2SH-P2WPSH: Base58 encoded addresses that start with 3.
-Native P2PWPKH/ Native P2WPSH: Bech32 addresses that start with bc.
+* P2PK: Compressed and uncompressed public keys (hex). They start with 02, 03, or 04.
+* P2PKH: Base58 encoded addresses that start with 1.
+* P2SH/ P2SH-P2WPKH/ P2SH-P2WPSH: Base58 encoded addresses that start with 3.
+* Native P2PWPKH/ Native P2WPSH: Bech32 addresses that start with bc.
 
 Once the data is loaded, the app will fetch supporting information such as transaction input amounts and transaction outputs spending status to be able to calculate the pending balance. Spent and received transactions for the address will be displayed in reverse chronological order.
 
@@ -54,7 +50,7 @@ To build for your operating system, please follow the instructions below:
 
 **Download the respository**
 ```
-git clone https://
+git clone https://github.com/ismailakkila/bitcoin-explorer-app.git
 ```
 
 **Move supporting binary executables**

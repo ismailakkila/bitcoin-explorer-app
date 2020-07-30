@@ -48,7 +48,7 @@
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
-    "electron": "^6.1.7",
+    "electron": "^9.1.2",
     "electron-builder": "^22.4.1",
     "electron-rebuild": "^1.10.0",
     "node-abi": "^2.13.0"

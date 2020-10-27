@@ -7,7 +7,7 @@ cffi==1.13.2
 chardet==3.0.4
 colorama==0.4.1
 constantly==15.1.0
-cryptography==2.8
+cryptography==3.2
 future==0.18.2
 gevent==1.4.0
 greenlet==0.4.15
